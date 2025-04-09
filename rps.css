@@ -1,0 +1,115 @@
+body{
+background-color: black;
+overflow-x:hidden;
+overflow-y:hidden;
+}
+.heading {
+    text-align: center;
+    background: linear-gradient(to top left, yellow, rgb(255, 0, 217));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.container{
+    height:75vh;
+    width:99vw;
+    background-color: rgb(0, 0, 0);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+    color:rgb(243, 16, 201);
+    font-family: cursive;
+    font-size: 20px;
+}
+
+.pictures{
+    height:200px;
+    width:650px;
+    display:flex;
+    gap:25px;
+    justify-content: center;
+
+}
+.pictures img{
+    height:150px;
+    width:150px;
+}
+.pict{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:20px;
+}
+
+#rock{
+    background:rgb(235, 25, 25);
+}
+#rock:hover{
+    background-color:rgb(118, 7, 7) ;
+    transition: background-color 0.3s ease;
+}
+#paper{
+    background-color:rgb(214, 235, 25);
+    
+}
+#paper:hover{
+    background-color:rgb(176, 195, 11);
+    transition: background-color 0.3s ease;
+}
+#scissor{
+    background-color:rgb(17, 244, 44);
+}
+#scissor:hover{
+    background-color:rgb(11, 177, 30);
+    transition: background-color 0.3s ease;
+}
+
+.hide{
+    display:none;/*hiding the winner mssg beforehand*/
+}
+.result{
+    display:flex;
+    gap:15px;
+}
+@media(max-width:530px){
+    *{
+        font-size: 18px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .details
+    {
+        margin-top:50px;
+    }
+    .container{
+        display:flex;
+        gap:14px;
+        
+    }
+    .pictures{
+        display: flex;
+        flex-direction: column;
+        width:50px;
+        gap:2px;
+        
+    }
+    .pictures img{
+        height:80px;
+        width:80px;
+    }
+    .result{
+        gap:2px;
+    }
+
+}
+@media((min-width:100px) and (max-width:200px)){
+*{
+    font-size: 12px;
+}
+}
+
