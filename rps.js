@@ -1,6 +1,29 @@
 let r=document.querySelector("#rock");
 let p=document.querySelector("#paper");
 let s=document.querySelector("#scissor");
+
+r.addEventListener("mouseover",(e)=>{
+    let x=e.pageX-r.offsetLeft;
+    let y=e.pageY-r.offsetTop;
+    r.style.setProperty("--posx",x + "px"); //posx variable from css is set to the location of x mousehover x axis on that button and appended with "px" as x is just a number but to set posx a value we need to set ot in px
+    r.style.setProperty("--posy",y + "px");
+})
+p.addEventListener("mouseover",(e)=>{
+//console.log(e.pageX,e.pageY); //accesses the direction of mouse from where its hovering
+//console.log(p.offsetLeft,p.offsetTop); //accesses the position of paper image relative to screen
+let x=e.pageX-p.offsetLeft;
+let y=e.pageY-p.offsetTop ;//accesses the "exact position" on the button where mouse hovers 
+//console.log(x,y);
+p.style.setProperty("--posx",x + "px"); //posx variable from css is set to the location of x mousehover x axis on that button and appended with "px" as x is just a number but to set posx a value we need to set ot in px
+p.style.setProperty("--posy",y + "px");
+})
+s.addEventListener("mouseover",(e)=>{
+    let x=e.pageX-s.offsetLeft;
+    let y=e.pageY-s.offsetTop;
+    s.style.setProperty("--posx",x + "px"); //posx variable from css is set to the location of x mousehover x axis on that button and appended with "px" as x is just a number but to set posx a value we need to set ot in px
+    s.style.setProperty("--posy",y + "px");
+})
+
 let win=document.querySelector(".win");
 let hide=document.querySelector(".hide");
 let userp=document.querySelector(".Userpoints");
