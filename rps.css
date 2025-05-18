@@ -43,26 +43,83 @@ overflow-y:hidden;
 }
 
 #rock{
-    background:rgb(235, 25, 25);
+    background:rgb(225, 13, 24);
+    position:relative;
+    overflow:hidden;
 }
-#rock:hover{
-    background-color:rgb(118, 7, 7) ;
-    transition: background-color 0.3s ease;
+#rock img{
+    position:relative;
+    z-index:1;
+}
+#rock:hover::before{
+    width:1200px;
+    height:1200px;
+}
+#rock::before{
+    content:"";
+    background-color: rgb(149, 11, 11);
+    position:absolute;
+    width:0px;
+    height:0px;
+    top:var(--posy);
+    left:var(--posx);
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    transition:width 0.75s,height 0.75s;   
 }
 #paper{
     background-color:rgb(214, 235, 25);
-    
+    position:relative;
+    overflow:hidden;  /*removes the extra content i.e hides the overflowing content */
 }
-#paper:hover{
-    background-color:rgb(176, 195, 11);
-    transition: background-color 0.3s ease;
+#paper:hover::before{
+    width:1200px;
+    height:1200px;
+}
+#paper img{
+    position:relative;
+    z-index:1;/*gives priority to the image that it should be above*/
+}
+#paper::before{ /*CSS pseudo element that allows you to insert content before the actual cantent of a HTML element*/
+    content:"";
+    background:#f3c232;
+    width:0px;
+    height:0px;
+    position :absolute;
+    /* top:50px; */
+    /* left:50px;left and top makes the corner of that pink box in middle */
+    top:var(--posy);/*posy is accessed from js,mouse hover location*/
+    left:var(--posx);/*posx is accessed from js,mouse hover location*/
+    transform:translate(-50%,-50%); /*adjusts the centre of box in the middle*/
+    border-radius:50%;
+    transition:width 0.75s,height 0.75s;
+
+
 }
 #scissor{
     background-color:rgb(17, 244, 44);
+    position:relative;
+    overflow: hidden;
 }
-#scissor:hover{
-    background-color:rgb(11, 177, 30);
-    transition: background-color 0.3s ease;
+#scissor img{
+    position:relative;
+    z-index:1;
+}
+#scissor:hover::before{
+    width:1200px;
+    height:1200px;
+}
+#scissor::before{
+    content:"";
+    background-color: rgb(8, 82, 2);
+    position:absolute;
+    width:0px;
+    height:0px;
+    top:var(--posy);
+    left:var(--posx);
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    transition:width 0.75s,height 0.75s;   
 }
 
 .hide{
